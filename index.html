@@ -231,6 +231,58 @@
     .step .num .n{font-size:22px;}
   }
 
+  /* ===== entry branch ===== */
+  .branch{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    margin:28px 0 0;
+  }
+  .branch a.branch-card{
+    display:block;
+    background:var(--white);
+    border:2px solid var(--navy);
+    border-radius:20px;
+    padding:34px 30px;
+    text-decoration:none;
+    color:var(--text);
+    box-shadow:0 2px 10px rgba(0,28,94,.06);
+    transition:transform .15s, box-shadow .15s;
+  }
+  .branch a.branch-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 6px 18px rgba(0,28,94,.12);
+  }
+  .branch .tag{
+    display:inline-block;
+    background:var(--navy);
+    color:var(--white);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.1em;
+    border-radius:100px;
+    padding:4px 16px;
+    margin-bottom:14px;
+  }
+  .branch a.branch-card.inh{border-color:var(--blue);}
+  .branch a.branch-card.inh .tag{background:var(--blue);}
+  .branch h3{
+    color:var(--navy);
+    font-size:19px;
+    font-weight:900;
+    line-height:1.6;
+    margin-bottom:10px;
+  }
+  .branch p{font-size:14.5px;}
+  .branch .more{
+    display:block;
+    margin-top:14px;
+    color:var(--blue);
+    font-weight:700;
+    font-size:14px;
+  }
+  .branch .more::after{content:" →";}
+
   /* ===== tax ===== */
   .tax-box{
     border:2px solid var(--navy);
@@ -365,7 +417,8 @@
     <p class="sec-label">ABOUT</p>
     <h2 class="sec-title">遺贈寄附とは</h2>
     <p class="sec-intro">
-      遺贈寄附とは、遺言によってご自身の財産の一部またはすべてを、公益的な活動に寄附することです。<br>
+      遺贈寄附とは、ご自身やご家族の財産に想いを託し、公益的な活動に寄附することです。<br>
+      遺言によってご自身の財産を遺す「遺言による寄付」と、相続人となられた方が相続した財産の中から寄付する「相続財産からの寄付」、大きく2つのかたちがあります。<br>
       資産家や富裕層だけの選択ではなく、誰もが選ぶことのできる「人生最後の豊かな選択」です。
     </p>
     <div class="card-grid">
@@ -440,12 +493,33 @@
   </div>
 </section>
 
-<!-- ===== 流れ ===== -->
-<section class="alt">
+<!-- ===== 入口の分岐 ===== -->
+<section style="padding-top:0;">
   <div class="inner">
-    <p class="sec-label">FLOW</p>
-    <h2 class="sec-title">遺贈寄附受入の流れ</h2>
-    <p class="sec-intro">ご相談から遺言執行まで、専門家とともに丁寧にサポートいたします。</p>
+    <h2 class="sec-title" style="font-size:clamp(20px,3vw,26px);">あなたに合った寄付のかたちを<br>お選びください</h2>
+    <div class="branch">
+      <a class="branch-card" href="#will">
+        <span class="tag">遺言による寄付</span>
+        <h3>ご自身の財産に、<br>想いを託したい方へ</h3>
+        <p>遺言書によって、ご自身の財産の一部またはすべてを茅ヶ崎の未来に遺す方法です。元気なうちから、いつでも準備を始められます。</p>
+        <span class="more">遺言による寄付の流れを見る</span>
+      </a>
+      <a class="branch-card inh" href="#inheritance">
+        <span class="tag">相続財産からの寄付</span>
+        <h3>ご家族から相続した財産を、<br>寄付したい方へ</h3>
+        <p>相続人となられた方が、相続した財産の中から寄付する方法です。相続税の申告期限（10か月以内）までの寄付で、税制上の優遇が受けられます。</p>
+        <span class="more">相続財産からの寄付について見る</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 流れ ===== -->
+<section class="alt" id="will">
+  <div class="inner">
+    <p class="sec-label">FLOW 01 ｜ 遺言による寄付</p>
+    <h2 class="sec-title">遺言による寄付の流れ</h2>
+    <p class="sec-intro">ご自身の財産に想いを託す方のための流れです。ご相談から遺言執行まで、専門家とともに丁寧にサポートいたします。</p>
     <div class="flow">
       <div class="step">
         <div class="num"><span class="s">STEP</span><span class="n">1</span></div>
@@ -489,8 +563,37 @@
   </div>
 </section>
 
+<!-- ===== 相続財産からの寄付 ===== -->
+<section id="inheritance">
+  <div class="inner">
+    <p class="sec-label">FLOW 02 ｜ 相続財産からの寄付</p>
+    <h2 class="sec-title">ご家族から相続した財産を<br>寄付したい方へ</h2>
+    <p class="sec-intro">
+      大切なご家族を亡くされた悲しみの中、このページをご覧いただきありがとうございます。<br>
+      遺贈寄付は、故人の遺言によるものだけではありません。相続人となられた方が、相続した財産の中から寄付する「相続財産からの寄付」も、故人の想いを未来につなぐ大切な方法です。
+    </p>
+    <div class="panel">
+      <h3>申告期限内の寄付で、相続税が非課税になります</h3>
+      <p>
+        相続した財産を、相続税の申告期限（ご逝去を知った日の翌日から10か月以内）までに公益財団法人へ寄付した場合、寄付した財産には相続税が課税されません。あわせて、寄付された方ご自身の所得税の寄附金控除も受けられます。
+      </p>
+      <h3>「茅ヶ崎で育ててもらった恩返しを」という選択</h3>
+      <p>
+        「故人が愛したこのまちに、財産の一部を役立てたい」。相続財産からの寄付は、故人の人生とまちとのつながりを、次世代への応援というかたちで未来に遺すことができます。金額はご自身の判断で自由に決められ、一部だけの寄付も可能です。
+      </p>
+      <h3>お手続きは、シンプルな3ステップです</h3>
+      <p>
+        ①まずはご相談ください　②ご寄付のお手続き　③領収書を添えて相続税の申告 ——遺言書の作成は不要で、お手続きは難しくありません。ただし<strong style="color:var(--red);">申告期限（10か月）を過ぎると税制優遇が受けられなくなる</strong>ため、お早めのご相談をおすすめします。
+      </p>
+    </div>
+    <div class="btn-center">
+      <a class="btn navy" href="https://fund100.jp/contact/">相続財産からの寄付について相談する</a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 税制 ===== -->
-<section>
+<section class="alt">
   <div class="inner">
     <p class="sec-label">TAX</p>
     <h2 class="sec-title">税制上の優遇について</h2>
@@ -507,7 +610,7 @@
 </section>
 
 <!-- ===== Q&A ===== -->
-<section class="alt">
+<section>
   <div class="inner">
     <p class="sec-label">Q&amp;A</p>
     <h2 class="sec-title">よくあるご質問</h2>
@@ -527,6 +630,14 @@
       <details>
         <summary>一度決めたら、変更はできませんか？</summary>
         <p class="a">遺言書はいつでも書き直すことができます。お気持ちやご事情の変化に合わせて変更できますので、まずは元気なうちに準備しておくことが大切です。</p>
+      </details>
+      <details>
+        <summary>亡くなった親の遺産の一部を寄付したいのですが、できますか？</summary>
+        <p class="a">できます。相続人となられた方が、相続した財産の中から寄付する「相続財産からの寄付」という方法です。相続税の申告期限（10か月以内）までに寄付されると、寄付した財産は相続税の課税対象になりません。遺言書がなくてもお手続きいただけますので、まずはご相談ください。</p>
+      </details>
+      <details>
+        <summary>相続税の申告期限（10か月）を過ぎてしまったら、寄付はできませんか？</summary>
+        <p class="a">申告期限を過ぎても寄付そのものは可能ですが、相続税の非課税特例は受けられなくなります（所得税の寄附金控除は受けられます）。また、相続した不動産などを売却して現金にしてから寄付した場合も特例の対象外となることがあります。税制優遇を最大限に活かすためにも、お早めにご相談ください。</p>
       </details>
       <details>
         <summary>寄附したお金がどう使われたか、家族に伝えてもらえますか？</summary>
